@@ -1,16 +1,12 @@
 import React from 'react';
-
+import Button, { ButtonType, ButtonSize } from './components/Button/button'
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello Keer</h1>
-        <h2>Hello Keer</h2>
-        <h3>Hello Keer</h3>
-        <h4>Hello Keer</h4>
-        <hr></hr>
-        <code>let a  = 3</code>
-        <a>Learn React</a>
+        <Button disabled> Keer </Button>
+        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}> Keer </Button>
+        <Button btnType={ButtonType.Link} href="http://www.baidu.com" disabled> Baidu </Button>
       </header>
     </div>
   );
