@@ -1,13 +1,22 @@
-import React from 'react';
-import Button, { ButtonType, ButtonSize } from './components/Button/button'
+import React from 'react'
+import 'vikingship/dist/index.css'
+import { Alert } from 'vikingship'
+
+import Alert1 from './components/Alert/alert'
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Button className="keer"> Keer </Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}> Large Primary </Button>
-        <Button btnType={ButtonType.Danger} size={ButtonSize.Small}> Small Danger </Button>
-        <Button btnType={ButtonType.Link} href="http://www.baidu.com" > Baidu </Button>
+        <Alert1 
+          title="标题" 
+          description="这是一个描述" 
+        />
+        <Alert
+          title="标题"
+          description="这是一个描述"
+          type="danger"
+          closable={true}
+        />
       </header>
     </div>
   );

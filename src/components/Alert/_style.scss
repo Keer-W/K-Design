@@ -1,0 +1,20 @@
+.alert {
+  position: relative;
+  padding: 20px 40px;
+  width: 500px;
+  border: 1px solid transparent;
+  border-color: $primary;
+  border-radius: 0.25rem;
+  color: $white;
+  background-color: $primary;
+  .alert-title {
+    font-weight: font-weight-bolde;
+    font-size: $font-size-lg;
+  }
+  .alert-close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+  }
+}

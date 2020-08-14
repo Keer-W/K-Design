@@ -40,6 +40,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   } = props
   
   //btn, btn-lg, btn-primary
+  //用classNames进行赋值
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
