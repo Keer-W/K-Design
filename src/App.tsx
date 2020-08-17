@@ -1,11 +1,19 @@
 import React from 'react'
 import 'vikingship/dist/index.css'
 import Alert from './components/Alert/alert'
+import Button from './components/Button/button'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Button
+          btnType="danger"
+          disabled={false}
+          size="lg"
+        >
+          Nice
+        </Button>
         <Alert
           title="标题"
           description="这是一个描述"
