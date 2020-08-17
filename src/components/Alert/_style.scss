@@ -1,6 +1,7 @@
 .alert {
   position: relative;
   padding: 20px 40px;
+  margin: 20px;
   width: 500px;
   border: 1px solid transparent;
   border-color: $primary;
@@ -17,4 +18,17 @@
     top: 10px;
     cursor: pointer;
   }
+}
+
+.alert-warning {
+  @include alert-style($warning)
+}
+.alert-success {
+  @include alert-style($success)
+}
+.alert-danger {
+  @include alert-style($danger)
+}
+.alert-default {
+  @include alert-style($primary)
 }
