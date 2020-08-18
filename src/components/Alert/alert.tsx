@@ -4,14 +4,15 @@ import MdClose from "react-ionicons/lib/MdClose";
 
 export type AlertType = 'success' | 'default' | 'warning' | 'danger'
 
-interface BaseAlertProps {
+export interface BaseAlertProps {
   title?: string;
   description?: string;
   type?: AlertType;
   closable?: boolean;
   LogoNodejs?: any;
+  onClick?: any;
 }
-const Alert: React.FC<BaseAlertProps> = (props) => {
+export const Alert: React.FC<BaseAlertProps> = (props) => {
   const [ show, setShow ] = useState(true)
   const {
     title,
@@ -48,5 +49,10 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
       ) : null}
     </React.Fragment>
   );
+}
+
+Alert.defaultProps = {
+  type: 'default',
+  closable: true
 }
 export default Alert

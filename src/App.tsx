@@ -1,19 +1,12 @@
 import React from 'react'
 import 'vikingship/dist/index.css'
 import Alert from './components/Alert/alert'
-import Button from './components/Button/button'
+// import Button from './components/Button/button'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Button
-          btnType="danger"
-          disabled={false}
-          size="lg"
-        >
-          Nice
-        </Button>
         <Alert
           title="标题"
           description="这是一个描述"
@@ -29,8 +22,6 @@ function App() {
         <Alert
           title="标题"
           description="这是一个描述"
-          closable={true}
-          type="default"
         />
         <Alert
           title="标题"
