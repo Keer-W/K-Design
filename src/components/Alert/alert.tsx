@@ -5,6 +5,7 @@ import MdClose from "react-ionicons/lib/MdClose";
 export type AlertType = 'success' | 'default' | 'warning' | 'danger'
 
 export interface BaseAlertProps {
+  className?: string;
   title?: string;
   description?: string;
   type?: AlertType;
@@ -15,12 +16,13 @@ export interface BaseAlertProps {
 export const Alert: React.FC<BaseAlertProps> = (props) => {
   const [ show, setShow ] = useState(true)
   const {
+    className,
     title,
     description,
     type,
     closable
   } = props
-  const classes = classNames('alert', {
+  const classes = classNames('alert', className, {
     [`alert-${type}`]: type
   })
   return (
