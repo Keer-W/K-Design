@@ -1,5 +1,6 @@
 import React from 'react'
-import 'vikingship/dist/index.css'
+// import 'vikingship/dist/index.css'
+// import { Menu } from 'vikingship'
 import Menu from './components/Menu/menu'
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from './components/Menu/subMenu'
@@ -11,17 +12,18 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Menu
+          defaultOpenSubMenus={["3"]}
           onSelect={(index) => {
             alert(index);
           }}
         >
-          <MenuItem index={0}>child1</MenuItem>
-          <MenuItem index={1}>child2</MenuItem>
-          <MenuItem index={2}>child3</MenuItem>
+          <MenuItem>child1</MenuItem>
+          <MenuItem>child2</MenuItem>
+          <MenuItem>child3</MenuItem>
           <SubMenu title="这是个下拉框">
-            <MenuItem index={0}>child1</MenuItem>
-            <MenuItem index={1}>child2</MenuItem>
-            <MenuItem index={2}>child3</MenuItem>
+            <MenuItem>child1</MenuItem>
+            <MenuItem>child2</MenuItem>
+            <MenuItem>child3</MenuItem>
           </SubMenu>
         </Menu>
       </header>
