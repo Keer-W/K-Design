@@ -11,11 +11,15 @@ export interface MenuItemProps {
 
 export const MenuItem: React.FC<MenuItemProps> = (props) => {
   const { index, disabled, className, style, children } = props
+  
+  //钩子函数useContext
   const context = useContext(MenuContext)
-  const classes = classNames("menu-item", className, {
+
+  const classes = classNames("menu-item", className, { 
     'is-disabled': disabled,
     'is-active': context.index === index
   })
+  
   const handleClick = () => {
     if(context.onSelect && !disabled && (typeof index === 'string')) {
       context.onSelect(index)
@@ -23,7 +27,7 @@ export const MenuItem: React.FC<MenuItemProps> = (props) => {
   }
   return (
     <li className={classes} style={style} onClick={handleClick}>
-      {children}
+      {children} 
     </li>
   )
 }
