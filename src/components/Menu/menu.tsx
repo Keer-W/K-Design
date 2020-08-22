@@ -14,7 +14,7 @@ export interface MenuProps {
   style?: React.CSSProperties;
   //自定义回调
   onSelect?: SelectCallback;
-  //控制SubMenu是否展开
+  //纵向模式下控制SubMenu是否自动展开
   defaultOpenSubMenus?: string[];
 }
 
@@ -44,7 +44,7 @@ export const Menu: React.FC<MenuProps> = (props) => {
 
   const classes = classNames('menu', className, {
     'menu-vertical': mode === 'vertical',
-    'menu-horizontal': mode !== 'vertical'
+    'menu-horizontal': mode !== 'vertical',
   })
 
   const handleClick = (index: string) => {

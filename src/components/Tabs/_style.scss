@@ -1,0 +1,22 @@
+.tab {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  .tab-item {
+    margin: 0 10px;
+    cursor: pointer;
+    &.is-disabled {
+      color: $menu-item-disabled-color;
+      pointer-events: none;
+      cursor: default;;
+    }
+    &.is-active,&:hover {
+      color: $tab-item-active-color;
+      border-bottom: $tab-item-active-border-width solid $tab-item-active-color;
+    }
+  }
+}
+.tab-content {
+  padding-left: 10px;
+}
