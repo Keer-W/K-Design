@@ -17,6 +17,7 @@ const TabItem: React.FC<TabItemProps> = (props) => {
     'is-disabled': disabled,
     'is-active': context.index === index
   })
+  console.log(context)
   const handleClick = () => {
     if (context.onSelect && !disabled && index && children) {
       //bug:context.onSelect传过来，第一次获取的为undefined，其余正常

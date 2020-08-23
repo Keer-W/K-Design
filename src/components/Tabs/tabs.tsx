@@ -5,7 +5,7 @@ interface TabsProps {
   defaultContent?: string;
   defaultIndex?: number;
   className?: string;
-  onSelect?: (selectedIndex: number, children: string) => void;
+  onSelect?: (selectedIndex: number, children?: string) => void;
   type?: string;
 }
 
@@ -27,7 +27,7 @@ export const Tabs: React.FC<TabsProps> = (props) => {
     setActive(index)
     setContent(children)
     if(onSelect) {
-      onSelect(index, children)
+      onSelect(index)
     }
   }
   const activeContext: ITabsContext = {
