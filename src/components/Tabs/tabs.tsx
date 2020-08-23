@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react'
 import classNames from 'classnames'
 import { TabItemProps } from './tabItem'
+
 interface TabsProps {
   defaultContent?: string;
   defaultIndex?: number;
@@ -10,11 +11,11 @@ interface TabsProps {
 }
 
 interface ITabsContext  {
-  index: number;
-  onSelect?: (selectedIndex: number, children: string) => void;
+  contextIndex: number;
+  onSelect: (selectedIndex: number, children: string) => void;
 }
 
-export const TabsContext = createContext<ITabsContext>({index: 0})
+export const TabsContext = createContext<ITabsContext>({ contextIndex: 0, onSelect: () => {}});
 
 export const Tabs: React.FC<TabsProps> = (props) => {
   const { defaultContent, defaultIndex, className, onSelect, type, children } = props
@@ -31,9 +32,9 @@ export const Tabs: React.FC<TabsProps> = (props) => {
     }
   }
   const activeContext: ITabsContext = {
+    contextIndex: currentActive ? currentActive : 0,
     onSelect: handleClick,
-    index: currentActive ? currentActive : 0,
-  }
+  };
   const renderChildren = () => {
     return React.Children.map(children, (child, index) => {
       const childElement = child as React.FunctionComponentElement<TabItemProps>

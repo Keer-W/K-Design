@@ -11,17 +11,16 @@ export interface TabItemProps {
 }
 
 const TabItem: React.FC<TabItemProps> = (props) => {
-  const context = useContext(TabsContext)
+  const { contextIndex, onSelect } = useContext(TabsContext)
   const { index, label, disabled, className, children } = props
-  const classes = classNames('tab-item', className, {
-    'is-disabled': disabled,
-    'is-active': context.index === index
-  })
-  console.log(context)
+  const classes = classNames("tab-item", className, {
+    "is-disabled": disabled,
+    "is-active": contextIndex === index,
+  });
   const handleClick = () => {
-    if (context.onSelect && !disabled && index && children) {
-      //bug:context.onSelect传过来，第一次获取的为undefined，其余正常
-      context.onSelect(index, children)
+    if (onSelect && !disabled && index && children) {
+      //bug:useContext第一次取不到onSelect？？？
+      onSelect(index, children)
     }
   }
   return (

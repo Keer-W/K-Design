@@ -14,10 +14,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Tabs>
-          <TabItem label="选项卡零" index={0}>child0</TabItem>
-          <TabItem label="选项卡一" index={1}>child1</TabItem>
-          <TabItem label="选项卡二" index={2}>child2</TabItem>
-          <TabItem label="选项卡三" index={3}>child3</TabItem>
+          <TabItem label="选项卡零">child0</TabItem>
+          <TabItem label="选项卡一">child1</TabItem>
+          <TabItem label="选项卡二">child2</TabItem>
+          <TabItem label="选项卡三">child3</TabItem>
         </Tabs>
       </header>
     </div>
